@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kGa-eh-Dql">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Flicker photo search-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="photo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UFJ-Vv-EZC" userLabel="Continer Stack View">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QvR-OR-8ji" userLabel="Search Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <subviews>
+                                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="K68-Sk-jr9">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="GtJ-ys-79E"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="83c-yF-GIM" userLabel="Table Stack View">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="553"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fmm-bq-sUy">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="OkT-lv-SKZ"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="s3T-Ip-fJ9"/>
+                                                </connections>
+                                            </tableView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Fmm-bq-sUy" secondAttribute="trailing" id="R2U-yk-1Dd"/>
+                                            <constraint firstAttribute="bottom" secondItem="Fmm-bq-sUy" secondAttribute="bottom" id="hKA-gQ-Z2h"/>
+                                            <constraint firstItem="Fmm-bq-sUy" firstAttribute="leading" secondItem="83c-yF-GIM" secondAttribute="leading" id="s8L-XP-6ia"/>
+                                            <constraint firstItem="Fmm-bq-sUy" firstAttribute="top" secondItem="83c-yF-GIM" secondAttribute="top" id="yS8-LY-K0J"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QvR-OR-8ji" firstAttribute="top" secondItem="UFJ-Vv-EZC" secondAttribute="top" id="1Xz-bt-yiU"/>
+                                    <constraint firstAttribute="bottom" secondItem="83c-yF-GIM" secondAttribute="bottom" id="2bf-xt-Tin"/>
+                                    <constraint firstAttribute="trailing" secondItem="83c-yF-GIM" secondAttribute="trailing" id="BPY-gF-JLZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="QvR-OR-8ji" secondAttribute="trailing" id="Byi-12-Kle"/>
+                                    <constraint firstItem="83c-yF-GIM" firstAttribute="leading" secondItem="UFJ-Vv-EZC" secondAttribute="leading" id="L6w-HN-VZO"/>
+                                    <constraint firstItem="83c-yF-GIM" firstAttribute="top" secondItem="QvR-OR-8ji" secondAttribute="bottom" id="TnT-6b-mMb"/>
+                                    <constraint firstItem="QvR-OR-8ji" firstAttribute="leading" secondItem="UFJ-Vv-EZC" secondAttribute="leading" id="pj6-0g-CHJ"/>
+                                    <constraint firstItem="83c-yF-GIM" firstAttribute="top" secondItem="QvR-OR-8ji" secondAttribute="bottom" id="tRm-0K-mSV"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UFJ-Vv-EZC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RSC-L3-Vqv"/>
+                            <constraint firstItem="UFJ-Vv-EZC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Up3-aO-EhK"/>
+                            <constraint firstAttribute="bottom" secondItem="UFJ-Vv-EZC" secondAttribute="bottom" id="bWR-DM-z4C"/>
+                            <constraint firstAttribute="trailing" secondItem="UFJ-Vv-EZC" secondAttribute="trailing" id="cUw-1i-7za"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Flicker photo search" id="KUt-38-VWN"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="iEO-WK-Nil" id="aqq-4m-GpN"/>
+                        <outlet property="searchText" destination="K68-Sk-jr9" id="PIs-uK-5Gf"/>
+                        <outlet property="tableView" destination="Fmm-bq-sUy" id="gEg-IZ-GU6"/>
+                        <segue destination="Jrg-nn-UGe" kind="push" identifier="goToPhotos" id="Wkz-wl-kxI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="iEO-WK-Nil">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="k5K-QN-Kf3"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="wfX-gt-OBx"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="NvE-kF-FmQ"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="WPb-df-oNA"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="964" y="36.431784107946029"/>
+        </scene>
+        <!--More photos from this user-->
+        <scene sceneID="ZeH-MO-AdF">
+            <objects>
+                <viewController storyboardIdentifier="PhotosViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jrg-nn-UGe" customClass="PhotosViewController" customModule="photo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dOv-bs-CJH"/>
+                        <viewControllerLayoutGuide type="bottom" id="aVh-bn-mHE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y5d-lR-0aB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BTe-di-Elt">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="BTe-di-Elt" secondAttribute="trailing" id="0Lb-EE-dxg"/>
+                            <constraint firstItem="aVh-bn-mHE" firstAttribute="top" secondItem="BTe-di-Elt" secondAttribute="bottom" id="2DF-uf-2Hc"/>
+                            <constraint firstItem="BTe-di-Elt" firstAttribute="top" secondItem="dOv-bs-CJH" secondAttribute="bottom" id="fk2-iJ-tBv"/>
+                            <constraint firstItem="BTe-di-Elt" firstAttribute="leading" secondItem="y5d-lR-0aB" secondAttribute="leading" id="jbC-0h-xHR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="More photos from this user" id="MGZ-SB-itr"/>
+                    <connections>
+                        <outlet property="tableView" destination="BTe-di-Elt" id="Tt6-ws-s19"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIZ-cx-v7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wPY-ZO-fGA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kGa-eh-Dql" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lOk-Ux-jqV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KL1-0l-0yi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0e3-gL-Jmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="36"/>
+        </scene>
+    </scenes>
+</document>
